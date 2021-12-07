@@ -1,0 +1,58 @@
+{% load static %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Spns Consulting</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+<link rel="stylesheet" href="{% static 'css/marko.css' %}">
+<style>
+
+    .phone_box_spacing{
+  padding: .4rem;
+
+    }
+
+
+    .templateux-cover::before{
+      background: linear-gradient( to bottom, rgba(0,0,0,.3), rgba(0,0,0,.3), rgba(0,0,0,.3) )
+       !important;
+    }
+
+  
+
+    @media screen and (min-width:882px) {
+
+
+      .logo{
+        width: 100%;
+        display:block;
+        height: 100px;
+      }      
+
+      .templateux-cover::before{
+        background: linear-gradient( to bottom,rgb(255, 255, 255), rgba(0,0,0,.3), rgba(0,0,0,.3) )
+         !important;
+      }
+  
+    }
+    @media screen and (max-width:460px) {
+        .phone_box_spacing{
+          padding: 1rem 0;
+        }
+  }
+
+  .accordion .accordion-item h2 a::before{
+    content: "" !important;
+  }
+
+
+ 
+
+  
+</style>
+
+{% block extraStyle %}
+  
+{% endblock extraStyle %}
+  

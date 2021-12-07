@@ -1,0 +1,40 @@
+{% load static %}
+<html lang="en">
+
+  <head>
+      {% include 'partials/head.html' %}
+  </head>
+  <body>
+    <div  id="site-wrap" >
+        {% include 'partials/nav.html' %}
+
+    
+
+           
+      {% block mainContent %}
+        
+      {% endblock mainContent %}
+
+
+
+      {% include 'partials/footer.html' %}
+
+      
+        </div> 
+        <script src="{% static 'js/scripts-all.js' %}"></script>
+        <script src="{%  static 'js/main.js' %}"></script>
+      
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> -->
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-23581568-13');
+        </script>
+        </body>
+      
+      </html>
+    
+</body>
+</html>

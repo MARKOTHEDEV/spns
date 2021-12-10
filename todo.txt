@@ -1,0 +1,12 @@
+
+
+
+1)change the intro --done
+2)socials should be in nav ...  now nav should be 
+            logo -- navlinks -- socials
+3)top most servicess in the three section - done
+4)change reseacrh and insight -> 
+which should have cards -- done ..
+the cards should take me to a detail page--done
+on click of danload they should  fill a data before the danload happens
+contact should have a woman in intro

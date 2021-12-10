@@ -17,3 +17,5 @@ def researchInsight(request):return render(request,'researchInsight.html')
 
 
 def contactUs(request):return render(request,'contact.html')
+
+def researchInsightDetailPage(request,ID=None):return render(request,'researchInsightDetailPage.html')

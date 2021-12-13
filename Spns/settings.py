@@ -149,4 +149,4 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
-django_heroku.settings(config=locals(), staticfiles=os.environ['debug']=='False',logging=False)
+django_heroku.settings(config=locals(), staticfiles=os.environ['debug']=='True',logging=False)

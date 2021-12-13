@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -129,6 +129,23 @@ STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST ='smtp-relay.sendinblue.com'
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD =os.environ['sending_bluePassword']
+
+"Start of Aws S3 bucket settings "
+AWS_ACCESS_KEY_ID = os.environ['aws_access_key_id']
+AWS_SECRET_ACCESS_KEY = os.environ['aws_secret_access_key']
+AWS_STORAGE_BUCKET_NAME = 'emetricslearning'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_VERIFY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
 
 
 

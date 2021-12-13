@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/serviceDetail.css' %}"> 
+
+</head>
+<body>
+    
+
+
+
+  <!-- style="background: url({% static 'images/serviceDetail.jpg' %})" -->
+  
+  <div class="app">
+    <header
+    >
+    <a href="">
+      <img src="{% static 'serviceDetail.jpg' %}" alt="Earth News">
+      </a>
+    </header>
+    <!-- <nav>
+      <a href="#" aria-current="page">Home</a>
+      <a href="#">Podcast</a>
+      <a href="#">Contact</a>
+    </nav> -->
+    <main>
+      <!-- <h1><span>H<sub>2</sub>O</span> Fresh Air,<br>Bright Future</h1> -->
+      <h1>
+        {{service.title}}
+      </h1>
+      <p>
+        {{service.main_content}}
+      </p>
+      <!-- <a href="">Read full article</a> -->
+    </main>
+  </div>
+  
+
+
+
+
+</body>
+</html>

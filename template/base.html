@@ -8,7 +8,22 @@
     <div  id="site-wrap" >
         {% include 'partials/nav.html' %}
 
-    
+        {% if messages %}
+        <ul class="messages" id="messageModal">
+          <!-- <li>sdkoeo</li> -->
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            <!-- dkijfirifirfnrnfn  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quos nemo consectetur ipsa. Non autem incidunt dolores fugit iste. Ut consequatur numquam dolorum officiis non minima culpa eos asperiores aperiam. -->
+            {{ message }}</li>
+            {% endfor %}
+
+          <i class="fas fa-times" id="closeModal" ></i>
+
+        </ul>
+        {% endif %}
+
+      
+        
 
            
       {% block mainContent %}
@@ -37,7 +52,15 @@
         </script>
         
       
-      
+        <script>
+          const messageModal= document.querySelector('#messageModal');
+          const closeModal = document.querySelector('#closeModal')
+
+          closeModal.addEventListener('click',e=>{
+
+            messageModal.style.display='none'
+          })
+        </script>
         {% block extraJS %}
           
         {% endblock extraJS %}

@@ -8,5 +8,13 @@
 4)change reseacrh and insight -> 
 which should have cards -- done ..
 the cards should take me to a detail page--done
-on click of danload they should  fill a data before the danload happens
-contact should have a woman in intro
+on click of danload they should  fill a data before the danload happens--done
+contact should have a woman in intro -- done
+
+
+on fill of the form
+save info and send pdf to the user
+
+each blog post should have a cover picture
+on click of it show few data and a btn to danload
+

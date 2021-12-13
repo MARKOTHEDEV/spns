@@ -10,13 +10,13 @@
       
       {% block mainContent %}
         
-      <div class="templateux-cover" style="background-image: url({% static 'images/hero_1.jpg' %});">
+      <div class="templateux-cover" style="background-image: url({% static 'images/blackPixel.jpeg' %});">
         <div class="container">
         <div class="row align-items-lg-center">
         <div class="col-lg-7 order-lg-1">
         <h1 class="heading mb-3 text-white" >
           We Are Your Partners in
-           <strong> building san excellent Business in the structure and performance </strong>
+           <strong> building an excellent Business in the structure and performance </strong>
         </h1>
         <!-- <p class="lead mb-5 text-white">
           To build operationally excellent businesses both in structure and in performance by the application of proven management principles, techniques, and technology
@@ -74,98 +74,32 @@
         </div>
         <!-- <br> -->
     
-        <div class="templateux-section bg-light phone_box_spacing">
+        <div class="templateux-section bg-light phone_box_spacing" style="margin-bottom:-110px;">
           <div class="container">
-          <div class="row mb-5">
-          <div class="col-12 text-center mb-5">
+          <div class="row ">
+          <div class="col-12 text-center ">
           <h2>Our Services</h2>
           </div>
-                <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="400">
+                
+                {% for service in  all_service %}
+                  <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="400">
                     <div class="media block-icon-1 d-block text-center">
                       <div class="icon mb-3">
-                        <img src="{% static 'images/flaticon/svg/004-gear.svg' %}" alt="Image" class="img-fluid">
+                        <i class="{{service.icon_class}}" style="color: #1273eb;"></i>
+                        <!-- <img src="{% static 'images/flaticon/svg/004-gear.svg' %}" alt="Image" class="img-fluid"> -->
                       </div>
                       <div class="media-body">
-                          <h3 class="h5 mb-4">PROCESS DOCUMENTATION (SOP GENERATION)</h3>
+                          <h3 class="h5 mb-4">{{service.title}}</h3>
                             <p>
-                              Considering the fact that Process documentation is the creation of an operational roadmap .. <a href="">Read More</a> 
-                              <!-- identify the current state of a process to know how you can improve it. Any task that is done more than once or completed by multiple people needs to be documented. -->
+                                {{service.intro_content}}
+
+                                <a href="{% url 'serviceDetail' service.id  %}">Read More</a>
                             </p>
                       </div>
                     </div> 
                 </div>
-                <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="401">
-                <div class="media block-icon-1 d-block text-center">
-                <div class="icon mb-3">
-                <img src="{% static 'images/flaticon/svg/005-conflict.svg' %}" alt="Image" class="img-fluid">
-                </div>
-                <div class="media-body">
-                <h3 class="h5 mb-4">PROCESS IMPROVEMENT</h3>
-            
-                <p>
-                  Considering the fact that Process documentation is the creation of an operational roadmap .. <a href="">Read More</a> 
-                  <!-- identify the current state of a process to know how you can improve it. Any task that is done more than once or completed by multiple people needs to be documented. -->
-                </p>
-              </div>
-                </div> 
-                </div>
-              <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="500">
-              <div class="media block-icon-1 d-block text-center">
-              <div class="icon mb-3">
-              <img src="{% static 'images/flaticon/svg/006-meeting.svg' %}" alt="Image" class="img-fluid">
-              </div>
-              <div class="media-body">
-              <h3 class="h5 mb-4">Process Automation</h3>
-              <p>
-                Considering the fact that Process documentation is the creation of an operational roadmap .. <a href="">Read More</a> 
-                <!-- identify the current state of a process to know how you can improve it. Any task that is done more than once or completed by multiple people needs to be documented. -->
-              </p>
-              </div>
-              </div> 
-              </div>
-              <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="600">
-              <div class="media block-icon-1 d-block text-center">
-              <div class="icon mb-3">
-              <img src="{% static 'images/flaticon/svg/007-brainstorming.svg' %}" alt="Image" class="img-fluid">
-              </div>
-              <div class="media-body">
-              <h3 class="h5 mb-4">Process Outsourcing</h3>
-              <p>
-                Considering the fact that Process documentation is the creation of an operational roadmap .. <a href="">Read More</a> 
-                <!-- identify the current state of a process to know how you can improve it. Any task that is done more than once or completed by multiple people needs to be documented. -->
-              </p>
-              </div>
-              </div> 
-              </div>
-          <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="400">
-          <div class="media block-icon-1 d-block text-center">
-          <div class="icon mb-3">
-          <img src="{% static  'images/flaticon/svg/001-consultation.svg' %}" alt="Image" class="img-fluid">
-          </div>
-          <div class="media-body">
-          <h3 class="h5 mb-4">Process Outsourcing</h3>
-          <p>
-            Considering the fact that Process documentation is the creation of an operational roadmap .. <a href="">Read More</a> 
-            <!-- identify the current state of a process to know how you can improve it. Any task that is done more than once or completed by multiple people needs to be documented. -->
-          </p>
-        </div>
-          </div> 
-          </div>
-          <div class="col-md-4 mb-4"  data-aos="fade-up" data-aos-delay="600">
-          <div class="media block-icon-1 d-block text-center">
-          <div class="icon mb-3">
-          <img src="{% static 'images/flaticon/svg/009-brainstorming-2.svg' %}" alt="Image" class="img-fluid">
-          </div>
-          <div class="media-body">
-          <h3 class="h5 mb-4">Service Quality Monitoring</h3>
-          <p>
-            Considering the fact that Process documentation is the creation of an operational roadmap .. <a href="">Read More</a> 
-            <!-- identify the current state of a process to know how you can improve it. Any task that is done more than once or completed by multiple people needs to be documented. -->
-          </p>
-
-          </div>
-          </div> 
-          </div>
+                {% endfor %}
+                  
           </div>
           <div class="row">
           <div class="col-md-12 text-center" >
@@ -177,7 +111,7 @@
     
     
 
-          <div class="templateux-section">
+          <div class="templateux-section" style="margin-bottom:-110px;">
             <div class="container">
                 <div class="row">
                
@@ -188,61 +122,20 @@
                   <!-- </div> -->
 
 
-                  <div class="col-md-6 col-lg-4 mb-4">
-                          <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-                          <div class="block-thumbnail-content">
-                          <h2>Let See If DBLIKESIT</h2>
-                          <span class="post-meta">creazy things..</span>
-                          </div>
-                          </a>
-                  </div>
+{% for  i  in  all_researchInfor %}
+<div class="col-md-6 col-lg-4 mb-4">
+  <a href="{% url 'researchInsightDetail' i.id %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({{ i.cover_image.url }})" data-aos="fade" data-aos-delay="300">
+  <div class="block-thumbnail-content">
+  <h2>{{  i.heading }}</h2>
+  <span class="" style="color: white;">{{ i.intro_content }}</span>
+  </div>
+  </a>
+</div>
 
-                  <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-                    <div class="block-thumbnail-content">
-                    <h2>Let See If DBLIKESIT</h2>
-                    <span class="post-meta">creazy things..</span>
-                    </div>
-                    </a>
-                  </div>
-
-            <div class="col-md-6 col-lg-4 mb-4">
-              <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-              <div class="block-thumbnail-content">
-              <h2>Let See If DBLIKESIT</h2>
-              <span class="post-meta">creazy things..</span>
-              </div>
-              </a>
-            </div>
-                
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-              <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-              <div class="block-thumbnail-content">
-              <h2>Let See If DBLIKESIT</h2>
-              <span class="post-meta">creazy things..</span>
-              </div>
-              </a>
-            </div>
-
-
-            <div class="col-md-6 col-lg-4 mb-4">
-              <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-              <div class="block-thumbnail-content">
-              <h2>Let See If DBLIKESIT</h2>
-              <span class="post-meta">creazy things..</span>
-              </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mb-4">
-              <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-              <div class="block-thumbnail-content">
-              <h2>Let See If DBLIKESIT</h2>
-              <span class="post-meta">creazy things..</span>
-              </div>
-              </a>
-            </div>
+{% endfor %}
+  
+  
+                  
                 </div> 
             <!-- <div class="row mt-5">
             <div class="col-md-12 pt-5">
@@ -260,12 +153,12 @@
 
 
 
-        <div class="templateux-section phone_box_spacing">
+        <div class="templateux-section phone_box_spacing" >
         <div class="container" >
         <div class="row">
         <div class="col-lg-7"data-aos="fade-left" data-aos-delay="400">
           <!-- <h2 class="mb-5">Insight and Research</h2> -->
-          <h2 class="mb-5">More on Spns</h2>
+          <h2 class="">More on SPNS</h2>
         <div class="item">
           <!-- <img src="{% static 'images/slider-1.jpg' %}" alt="Free template by TemplateUX.com" class="img-fluid"> -->
           <p>
@@ -280,7 +173,7 @@
         </div> 
         </div>
         <div class="col-lg-5 pl-lg-5" data-aos="fade-right" data-aos-delay="400">
-        <h2 class="mb-5">Why Us?</h2>
+        <h2 class="">Why Us?</h2>
         <div class="accordion" id="accordionExample">
         <div class="accordion-item">
         <h2 class="mb-0 rounded mb-2">

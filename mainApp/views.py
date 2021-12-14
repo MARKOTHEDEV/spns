@@ -29,10 +29,38 @@ def solutionsPage(request):return render(request,'soloutions.html',
 
 
 
-def researchInsight(request):return render(request,'researchInsight.html')
+def researchInsight(request):return render(request,'researchInsight.html',{
+     "all_researchInfor":models.ResearchInsightInfo.objects.all()
+})
 
 
-def contactUs(request):return render(request,'contact.html')
+def contactUs(request):
+    name = ''
+    email = ''
+    message = ''
+    messageType = ''
+
+    if request.method == 'POST':
+
+        print(request.POST)
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        messageType = request.POST['messageType']                  
+
+        print(
+            name,"name\n",
+            email,"email\n",
+            message,"message\n",
+        )
+        contact= models.Contact.objects.create(name=name,email=email,message=message,message_type=messageType)
+
+        contact.save()
+        messages.success(request, 'Thank you for reach out.. our team will get back to you')
+
+
+    
+    return render(request,'contact.html')
 
 def researchInsightDetailPage(request,ID=None):
     reseacrhInsight = models.ResearchInsightInfo.objects.get(id=ID)

@@ -38,64 +38,20 @@
                   </div>
                 <!-- </div> -->
 
-
+                {% for  i  in  all_researchInfor %}
                 <div class="col-md-6 col-lg-4 mb-4">
-                        <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-                        <div class="block-thumbnail-content">
-                        <h2>Let See If DBLIKESIT</h2>
-                        <span class="post-meta">creazy things..</span>
-                        </div>
-                        </a>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4">
-                  <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
+                  <a href="{% url 'researchInsightDetail' i.id %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({{ i.cover_image.url }})" data-aos="fade" data-aos-delay="300">
                   <div class="block-thumbnail-content">
-                  <h2>Let See If DBLIKESIT</h2>
-                  <span class="post-meta">creazy things..</span>
+                  <h2>{{  i.heading }}</h2>
+                  <span class="" style="color: white;">{{ i.intro_content }}</span>
                   </div>
                   </a>
                 </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-            <div class="block-thumbnail-content">
-            <h2>Let See If DBLIKESIT</h2>
-            <span class="post-meta">creazy things..</span>
-            </div>
-            </a>
-          </div>
-              
-          
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-            <div class="block-thumbnail-content">
-            <h2>Let See If DBLIKESIT</h2>
-            <span class="post-meta">creazy things..</span>
-            </div>
-            </a>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-            <div class="block-thumbnail-content">
-            <h2>Let See If DBLIKESIT</h2>
-            <span class="post-meta">creazy things..</span>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <a href="{% url 'researchInsightDetail' 1 %}" class="block-thumbnail-1 one-whole show-text height-sm" style="background-image:url({% static 'images/xslider-2.jpg.pagespeed.ic.YtOuLwBLVI.jpg' %})" data-aos="fade" data-aos-delay="300">
-            <div class="block-thumbnail-content">
-            <h2>Let See If DBLIKESIT</h2>
-            <span class="post-meta">creazy things..</span>
-            </div>
-            </a>
-          </div>
+                
+                {% endfor %}
+                  
               </div> 
-          <div class="row mt-5">
+          <!-- <div class="row mt-5">
           <div class="col-md-12 pt-5">
           <ul class="pagination custom-pagination">
           <li class="page-item prev"><a class="page-link" href="#"><i class="icon-keyboard_arrow_left"></i></a></li>
@@ -105,7 +61,7 @@
           <li class="page-item next"><a class="page-link" href="#"><i class="icon-keyboard_arrow_right"></i></a></li>
           </ul>
           </div>
-          </div>
+          </div> -->
           </div>
         </div> 
 

@@ -72,7 +72,7 @@ def researchInsightDetailPage(request,ID=None):
             return response
 
         except:
-            messages.error(request, 'Please PRovide required fields.')
+            messages.error(request, 'Please Provide required fields.')
             return HttpResponse("ss")
     
 

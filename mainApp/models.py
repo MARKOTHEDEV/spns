@@ -30,6 +30,7 @@ class ResearchInsightInfo(models.Model):
     cover_image = models.ImageField(upload_to='spns_cover_image/')
     heading= models.CharField(max_length=350)
     intro_content = models.TextField(default='..')
+    pdf_file = models.FileField(upload_to='researcch_and_insight',blank=True)
 
     def __str__(self):return f'{self.heading}'
 

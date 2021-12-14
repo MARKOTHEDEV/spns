@@ -7,7 +7,8 @@ from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
 import os
-
+from django.http import HttpResponse 
+from django.core.files import File as DjangoFile
 
 def indexPage(request):
 
@@ -34,8 +35,49 @@ def researchInsight(request):return render(request,'researchInsight.html')
 def contactUs(request):return render(request,'contact.html')
 
 def researchInsightDetailPage(request,ID=None):
+    reseacrhInsight = models.ResearchInsightInfo.objects.get(id=ID)
+    name = ''
+    email = ''
+    Location = ''
+    company = ''
+    jobTitle = ''
+    message = ''
+
+    if request.method == 'POST':
+
+
+        try:
+            data = dict(request.POST)  
+            print(data)  
+            name = request.POST['name']
+            email = request.POST['email']
+            Location = request.POST['Location']
+            company = request.POST['company']
+            jobTitle = request.POST['job-title']
+            # message= request.POST['message'] if request.POST['message'] else ""
+            print(name,email,message)
+            data = models.PeopleDataForPdf.objects.create(
+                name=name,email=email,
+                location=Location,
+                company=company,jobTitle=jobTitle,message=message
+            )
+            data.save()
+            messages.success(request, 'Thank you!!!..')
+            # application/pdf
+
+        # with open(reseacrhInsight.pdf_file.url) as fh:
+
+            response = HttpResponse(reseacrhInsight.pdf_file.url,content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename="{reseacrhInsight.heading}.csv"'
+            return response
+
+        except:
+            messages.error(request, 'Please PRovide required fields.')
+            return HttpResponse("ss")
+    
+
     return render(request,'researchInsightDetailPage.html',{
-        'object':models.ResearchInsightInfo.objects.get(id=ID),
+        'object':reseacrhInsight,
         "object_para":models.ResearchInsightInfo.objects.get(id=ID).researchinsight_paragraph_set.all()
         })
 

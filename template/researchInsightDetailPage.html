@@ -34,12 +34,12 @@
             </div> 
            
             <div class="form-group">
-                <input type="submit" value="Danload Pdf" id="dbFormInfoBtn" class="btn py-3 px-4 btn-primary">
+                <input type="submit" value="Download complete Pdf" id="dbFormInfoBtn" class="btn py-3 px-4 btn-primary">
                 </div>
 
             <div class="comment-form-wrap pt-5"  id="dbFormInfo" style="display: none;margin-bottom:-110px;">
                 <h3 class="">Fill the info below to danload the pdf</h3>
-                <form method="post" action="{% url 'submitData' 3 %}" class="p-5 bg-light">
+                <form method="post" action="{% url 'researchInsightDetail' object.id %}" class="p-5 bg-light">
                     {% csrf_token %}
                 <div class="form-group">
                 <label for="name">Name *</label>

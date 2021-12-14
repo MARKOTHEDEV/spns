@@ -14,7 +14,7 @@ class researchinsight_ParaGraphConten(admin.TabularInline):
     extra=1
 
 class ResearchInsightInfoAdmin(admin.ModelAdmin):
-    fieldsets=[(None,{'fields':['heading','cover_image','intro_content',]})]
+    fieldsets=[(None,{'fields':['heading','cover_image','intro_content','pdf_file']})]
     inlines=[researchinsight_ParaGraphConten]
 
 

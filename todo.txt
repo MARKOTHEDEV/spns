@@ -29,7 +29,7 @@ remove -Workforce Outsourcing it for savy hr
 
 
 Re arrange Service
-
+this changes will be made in the online website
 1)PROCESS IMPROVEMENT
 2)PROCESS DOCUMENTATION
 3)Process Outsourcing
@@ -39,9 +39,9 @@ Re arrange Service
 
 
 style form in insight --> phone  number is missing
-font
-add contact to footer
-add linkdin and instagram,facebook
+font -- done
+add contact to footer -- done
+add linkdin and instagram,facebook --done
 
 load the pdf aticles before and after more on spns
 

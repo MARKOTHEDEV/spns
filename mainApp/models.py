@@ -21,6 +21,9 @@ class PeopleDataForPdf(models.Model):
     company = models.CharField(max_length=300)
     jobTitle = models.CharField(max_length=300)
     message = models.TextField()
+    phone_number = models.CharField(max_length=100,default="")
+    # location = models.CharField(max_length=600,default="")
+    
 
     def __str__(self):return f'{self.name}'
 
@@ -48,6 +51,7 @@ class Contact(models.Model):
     email = models.EmailField()
     message_type = models.CharField(max_length=50)
     message = models.TextField()
+    phone = models.CharField(max_length=100,default="")
 
     def __str__(self):
         return f'{self.name} sent a message'

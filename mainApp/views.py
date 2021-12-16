@@ -39,6 +39,8 @@ def contactUs(request):
     email = ''
     message = ''
     messageType = ''
+    phoneNumber=''
+    phone =''
 
     if request.method == 'POST':
 
@@ -46,14 +48,20 @@ def contactUs(request):
         name = request.POST['name']
         email = request.POST['email']
         message = request.POST['message']
-        messageType = request.POST['messageType']                  
-
-        print(
-            name,"name\n",
-            email,"email\n",
-            message,"message\n",
+        messageType = request.POST['messageType']  
+        phoneNumber=request.POST['phone-number']
+        location       = request.POST['Location'] 
+        phone =request.POST['phone']         
+ 
+        # print(
+        #     name,"name\n",
+        #     email,"email\n",
+        #     message,"message\n",
+        # )
+        contact= models.Contact.objects.create(
+        name=name,email=email,message=message,message_type=messageType,phone=phone
+        
         )
-        contact= models.Contact.objects.create(name=name,email=email,message=message,message_type=messageType)
 
         contact.save()
         messages.success(request, 'Thank you for reach out.. our team will get back to you')
@@ -70,24 +78,28 @@ def researchInsightDetailPage(request,ID=None):
     company = ''
     jobTitle = ''
     message = ''
+    phoneNumber=''
 
     if request.method == 'POST':
 
 
         try:
-            data = dict(request.POST)  
-            print(data)  
+            # data = dict(request.POST)  
+            # print(data)  
             name = request.POST['name']
             email = request.POST['email']
             Location = request.POST['Location']
             company = request.POST['company']
             jobTitle = request.POST['job-title']
-            # message= request.POST['message'] if request.POST['message'] else ""
-            print(name,email,message)
+            phoneNumber=request.POST['phone-number']
+            message= request.POST['message'] if request.POST['message'] else ""
+            # print(name,email,message)
             data = models.PeopleDataForPdf.objects.create(
                 name=name,email=email,
                 location=Location,
-                company=company,jobTitle=jobTitle,message=message
+                company=company,jobTitle=jobTitle,message=message,
+                phone_number=phoneNumber,
+                # location=location
             )
             data.save()
             messages.success(request, 'Thank you!!!..')
